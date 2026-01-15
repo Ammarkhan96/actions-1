@@ -10,11 +10,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
+      - name: Install cowsay
+        run: sudo apt-get update && sudo apt-get install cowsay -y
+
       - name: List Repo Files
         run: ls -ltra
 
       - name: Executing Shell Script
         run: |
-         chmod +x ascii-script.sh
-         ./ascii-script.sh
-
+          chmod +x ascii-script.sh
+          ./ascii-script.sh
